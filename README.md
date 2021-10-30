@@ -1,6 +1,6 @@
 # Ejercicio1Grupo41
 
-Crar un nuevo paquete:
+    Crar un nuevo paquete:
     npm init
 
     Escribir el archivo para el punto de entrada
