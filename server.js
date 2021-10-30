@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const app = express();
-const route = express.Router();
+const router = express.Router();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
@@ -11,8 +11,12 @@ app.use(express.json());
 mongoose.connect("mongodb+srv://carloslondono:MisionTic2022*@clusterc4g41.dwgr1.mongodb.net/ejegrupo41db?retryWrites=true&w=majority");
 
 // Operaciones crud
+router.get('/', (req, res) => {
+    res.send("Este es el incio de mi primera API");
+});
 
-app.use(route);
+
+app.use(router);
 app.listen(3000, ()=> {
     console.log("Servido  corriendo en el puerto 3000")
 });
