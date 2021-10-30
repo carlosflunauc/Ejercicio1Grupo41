@@ -16,8 +16,18 @@ router.get('/', (req, res) => {
     res.send("Este es el incio de mi primera API");
 });
 
-// Insertar
+// Consultar todos
+router.get('/Usuario', (req, res) =>{
+    UsuarioSchema.find(function(err, datos){
+        if(err){
+            console.log("Error leyendo los usuarios");
+        }else{
+            res.send(datos);
+        }
+    })
+})
 
+// Insertar
 router.post('/Usuario', (req, res) =>{
     let nuevoUsuario = new UsuarioSchema({
         idUsuario: req.body.id,
